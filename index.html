@@ -1,47 +1,48 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Электронный табель — Demo</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Электронный табель (GitHub API)</title>
   <link rel="stylesheet" href="styles.css">
-  <!-- Firebase SDK -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 </head>
-<body class="dark">
-  <div id="app">
-    <header>
-      <h1>Электронный табель</h1>
-      <div id="user-area">
-        <button id="login-btn">Войти через GitHub</button>
-        <button id="logout-btn" style="display:none">Выйти</button>
+<body>
+  <header>
+    <h1>Электронный табель</h1>
+  </header>
+
+  <main>
+    <section id="auth">
+      <h2>Вход</h2>
+      <p>Введите свой GitHub Personal Access Token (PAT):</p>
+      <input type="password" id="token" placeholder="ghp_..." />
+      <button id="login-btn">Войти</button>
+    </section>
+
+    <section id="role-panel" style="display:none">
+      <h2 id="welcome"></h2>
+      <button id="logout-btn">Выйти</button>
+
+      <div id="admin-panel" class="panel" style="display:none">
+        <h3>Панель администратора</h3>
+        <button id="add-user-btn">Добавить пользователя</button>
+        <button id="add-group-btn">Добавить группу</button>
+        <div id="admin-data"></div>
       </div>
-    </header>
 
-    <main>
-      <section id="admin-panel" style="display:none">
-        <h2>Панель администратора</h2>
-        <button id="create-group-btn">Создать группу</button>
-        <button id="create-subject-btn">Создать предмет</button>
-        <!-- список групп/предметов -->
-        <div id="admin-lists"></div>
-      </section>
+      <div id="teacher-panel" class="panel" style="display:none">
+        <h3>Панель преподавателя</h3>
+        <div id="teacher-data"></div>
+      </div>
 
-      <section id="teacher-panel" style="display:none">
-        <h2>Панель преподавателя</h2>
-        <div id="teacher-subjects"></div>
-      </section>
+      <div id="student-panel" class="panel" style="display:none">
+        <h3>Панель ученика</h3>
+        <div id="student-data"></div>
+      </div>
+    </section>
 
-      <section id="student-panel" style="display:none">
-        <h2>Панель ученика</h2>
-        <div id="student-grades"></div>
-      </section>
-
-      <section id="alerts"></section>
-    </main>
-  </div>
+    <section id="alerts"></section>
+  </main>
 
   <script src="app.js"></script>
 </body>
