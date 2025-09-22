@@ -1,0 +1,5 @@
+[
+  { "github": "adminUser", "name": "Админ", "role": "admin" },
+  { "github": "teacherUser", "name": "Преподаватель", "role": "teacher" },
+  { "github": "studentUser", "name": "Ученик", "role": "student" }
+]
