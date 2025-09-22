@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Электронный табель — Demo</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="dark">
+  <div id="app">
+    <header>
+      <h1>Электронный табель</h1>
+      <div id="user-area">
+        <button id="login-btn">Войти через GitHub</button>
+        <button id="logout-btn" style="display:none">Выйти</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="admin-panel" style="display:none">
+        <h2>Панель администратора</h2>
+        <button id="create-group-btn">Создать группу</button>
+        <button id="create-subject-btn">Создать предмет</button>
+        <!-- список групп/предметов -->
+        <div id="admin-lists"></div>
+      </section>
+
+      <section id="teacher-panel" style="display:none">
+        <h2>Панель преподавателя</h2>
+        <div id="teacher-subjects"></div>
+      </section>
+
+      <section id="student-panel" style="display:none">
+        <h2>Панель ученика</h2>
+        <div id="student-grades"></div>
+      </section>
+
+      <section id="alerts"></section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
