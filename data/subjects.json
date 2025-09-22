@@ -1,0 +1,3 @@
+[
+  { "id": "math", "name": "Математика", "teacher": "teacherUser", "groups": ["group1"] }
+]
